@@ -18,10 +18,6 @@ int main(int argc, char* argv[])
 	char buf[BUF_SIZE];
 	int readlen;
 
-	
-
-
-
 	if (argc != 2)
 	{
 		showerror("usage: exe <port>");
@@ -85,6 +81,7 @@ int main(int argc, char* argv[])
 						clntaddrsz = sizeof(clntaddr);
 						clntsock = accept(servsock, (SA*)&clntaddr, &clntaddrsz);
 						FD_SET(clntsock, &readset);
+						puts("new client connect ...");
 					}
 					else
 					{
